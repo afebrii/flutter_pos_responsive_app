@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_pos_responsive_app/presentation/home/pages/dashboard_page.dart';
+import 'package:flutter_pos_responsive_app/presentation/tablet/home/pages/dashboard_tablet_page.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/components/buttons.dart';
@@ -26,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    var screenSize = MediaQuery.of(context).size.width;
     return Scaffold(
       body: ListView(
         padding: const EdgeInsets.all(16.0),
@@ -71,7 +73,21 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: true,
           ),
           const SpaceHeight(24.0),
-          Button.filled(onPressed: () {}, label: 'Login'),
+          Button.filled(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return screenSize > 600
+                        ? const DashboardTabletPage()
+                        : const DashboardPage();
+                  },
+                ),
+              );
+            },
+            label: 'Login',
+          ),
         ],
       ),
     );
