@@ -1,16 +1,51 @@
-# flutter_pos_responsive_app
+# Flutter POS Responsive App
 
-A new Flutter project.
+A Flutter POS (Point of Sale) application with a responsive UI layout.
 
-## Getting Started
+## Prerequisites
 
-This project is a starting point for a Flutter application.
+- Flutter SDK (Dart SDK compatible with `sdk: ^3.10.8`)
+- Android Studio / VS Code (optional)
 
-A few resources to get you started if this is your first Flutter project:
+## Setup
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+flutter pub get
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run
+
+```bash
+flutter run
+```
+
+## Build
+
+```bash
+flutter build apk
+```
+
+## Project Structure
+
+```text
+lib/
+  core/
+  data/
+  presentation/
+    auth/
+    history/
+    home/
+    order/
+    setting/
+    tablet/
+  main.dart
+assets/
+  icons/
+  images/
+  logo/
+```
+
+## Notes
+
+- Entry point: `lib/main.dart`
+- Default home: `LoginPage` (`lib/presentation/auth/pages/login_page.dart`)
